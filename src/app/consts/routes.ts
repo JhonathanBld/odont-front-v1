@@ -1,0 +1,10 @@
+export enum routes {
+  DASHBOARD = '/dashboard',
+  PESSOAS = '/pessoas',
+  TRATAMENTOS = '/tratamentos',
+  CLINICAS = '/clinicas',
+  UI_ELEMENTS_ICONS = '/ui/icons',
+  UI_ELEMENTS_CHARTS = '/ui/charts',
+  UI_ELEMENTS_MAP = '/ui/map',
+  LOGIN = '/login'
+}

@@ -1,0 +1,28 @@
+<app-layout>
+
+  <section class="container">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <section fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="33">
+          <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="nome" [(ngModel)]="clinica.nome">
+          </mat-form-field>
+        </div>
+
+
+        <div fxFlex="33">
+          <mat-form-field appearance="outline">
+            <mat-label>Endereço</mat-label>
+            <input matInput  formControlName="endereco" [(ngModel)]="clinica.endereco">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="100" fxLayoutAlign="end center">
+          <button mat-button color="primary" (click)="onSubmit()" [disabled]="form.invalid"> Salvar</button>
+        </div>
+      </section>
+    </form>
+  </section>
+</app-layout>

@@ -1,0 +1,54 @@
+<app-layout>
+
+  <section fxLayout="row wrap" class="container">
+
+    <div fxFlex="100" fxLayoutAlign="end center">
+      <button mat-button color="primary" routerLink="/tratamento/new"> NOVO TRATAMENTO </button>
+    </div>
+
+    <div fxFlex="100">
+      <ngx-datatable
+        [columnMode]="'force'"
+        [footerHeight]="50"
+        [headerHeight]="50"
+        [limit]="10"
+        [messages]="{emptyMessage:'Nenhum resultado encontrado.', totalMessage : 'Resultados'}"
+        [rows]="data"
+        class="material"
+        rowHeight="auto"
+        id="datatable">
+
+        <ngx-datatable-column name="ID" prop="id"></ngx-datatable-column>
+
+        <ngx-datatable-column name="Nome" prop="nome" [minWidth]="220">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row['nome'] }}
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Perido" prop="periodo" [minWidth]="220">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row['periodo'] + ' Mesês' }}
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [maxWidth]="100" name="Ações">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+              <div fxLayout="row wrap">
+                  <div fxFlex="50">
+                    <mat-icon class="i-edit" routerLink="/tratamento/{{row.id}}">edit</mat-icon>
+                  </div>
+
+                <div fxFlex="50">
+                  <mat-icon class="i-delete" (click)="delete(row.id)">delete</mat-icon>
+                </div>
+              </div>
+          </ng-template>
+        </ngx-datatable-column>
+
+
+      </ngx-datatable>
+    </div>
+
+  </section>
+</app-layout>
