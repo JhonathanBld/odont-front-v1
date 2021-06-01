@@ -2,49 +2,86 @@
 
   <section class="container">
 
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
       <section fxLayout="row wrap" fxLayoutGap="16px grid">
         <div fxFlex="33">
           <mat-form-field appearance="outline">
             <mat-label>Nome</mat-label>
-            <input matInput formControlName="nome" [(ngModel)]="pessoa.nome">
+            <input [(ngModel)]="pessoa.nome" formControlName="nome" matInput>
           </mat-form-field>
         </div>
 
         <div fxFlex="33">
           <mat-form-field appearance="outline">
             <mat-label>E-mail</mat-label>
-            <input matInput formControlName="email" [(ngModel)]="pessoa.email">
+            <input [(ngModel)]="pessoa.email" formControlName="email" matInput>
           </mat-form-field>
         </div>
 
         <div fxFlex="33">
           <mat-form-field appearance="outline">
             <mat-label>Celular</mat-label>
-            <input  matInput formControlName="celular" [(ngModel)]="pessoa.celular" type="number">
+            <input [(ngModel)]="pessoa.celular" formControlName="celular" matInput type="number">
           </mat-form-field>
         </div>
 
         <div fxFlex="33">
           <mat-form-field appearance="outline">
             <mat-label>Documento</mat-label>
-            <input matInput formControlName="cpf" [(ngModel)]="pessoa.cpf">
+            <input [(ngModel)]="pessoa.cpf" formControlName="cpf" matInput>
           </mat-form-field>
         </div>
 
         <div fxFlex="33">
           <mat-form-field appearance="outline">
             <mat-label>RG</mat-label>
-            <input matInput formControlName="rg" [(ngModel)]="pessoa.rg">
+            <input [(ngModel)]="pessoa.rg" formControlName="rg" matInput>
           </mat-form-field>
         </div>
 
 
-
         <div fxFlex="100" fxLayoutAlign="end center">
-          <button mat-button color="primary" (click)="onSubmit()" [disabled]="form.invalid"> Salvar</button>
+          <button (click)="onSubmit()" [disabled]="form.invalid" color="primary" mat-button> Salvar</button>
         </div>
       </section>
     </form>
+
+
+<!--    <section *ngIf="jaSalvo" class="p-5" fxLayout="row wrap" fxLayoutGap="16px grid">-->
+<!--      <div fxFlex="100">-->
+<!--        <mat-checkbox [(ngModel)]="pessoa.isFuncionario" class="mr-2">Funcionario</mat-checkbox>-->
+<!--        <mat-checkbox [(ngModel)]="pessoa.isPaciente">Paciente</mat-checkbox>-->
+<!--      </div>-->
+<!--    </section>-->
+
+    <section fxLayout="row wrap" fxLayoutGap="16px grid">
+
+      <mat-tab-group fxFlex="100" >
+        <mat-tab label="Paciente">
+          <div fxLayout="row wrap" fxLayoutGap="16px grid" class="p-5">
+            <div fxFlex="50">
+              <mat-form-field appearance="outline">
+                <mat-label>Tipo Sanguineo</mat-label>
+                <input [(ngModel)]="paciente.tipoSanguineo" matInput>
+              </mat-form-field>
+            </div>
+
+            <div fxFlex="50" fxLayoutAlign="end center">
+              <button mat-button color="primary" (click)="onSubmitFuncionario()"> Salvar funcionario</button>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Funcionario">
+
+        </mat-tab>
+      </mat-tab-group>
+
+
+    </section>
+
+    <section *ngIf="pessoa.isPaciente" fxLayout="row wrap" fxLayoutGap="16px grid">
+
+    </section>
+
   </section>
 </app-layout>

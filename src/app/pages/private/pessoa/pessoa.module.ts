@@ -12,9 +12,11 @@ import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {TextMaskModule} from "angular2-text-mask";
-import {ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatIconModule} from "@angular/material/icon";
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
@@ -33,7 +35,10 @@ import {MatIconModule} from "@angular/material/icon";
     MatNativeDateModule,
     TextMaskModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatTabsModule,
   ],
   providers : [
     MatDatepickerModule,

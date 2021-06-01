@@ -20,7 +20,8 @@ export class PessoasService {
   }
 
   save(pessoa : Pessoa):Observable<any> {
-    return this.http.post(environment.url + '/Pessoa' , pessoa);
+    const method = pessoa.id ? 'patch' : 'post';
+    return this.http[method](environment.url + '/Pessoa' , pessoa);
   }
 
   update(pessoa : Pessoa):Observable<any> {
