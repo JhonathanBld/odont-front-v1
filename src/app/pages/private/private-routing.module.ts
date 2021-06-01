@@ -54,16 +54,16 @@ const routes: Routes = [
     canActivate: [],
     component: EditarCadastrarProcedimentoComponent
   },
-  {
-    path: 'consulta/:id',
-    canActivate: [],
-    component: PesquisaConsultaComponent
-  },
-  {
-    path: 'consulta',
-    canActivate: [],
-    component: EditarCadastrarConsultaComponent
-  }
+  // {
+  //   path: 'consulta/:id',
+  //   canActivate: [],
+  //   component: PesquisaConsultaComponent
+  // },
+  // {
+  //   path: 'consulta',
+  //   canActivate: [],
+  //   component: EditarCadastrarConsultaComponent
+  // }
 
 ];
 
