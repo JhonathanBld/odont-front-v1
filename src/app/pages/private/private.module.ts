@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {PrivateRoutingModule} from "./private-routing.module";
-import {DashboardModule} from "./dashboard/dashboard.module";
-import {SharedModule} from "../../shared/shared.module";
-import {PessoaModule} from "./pessoa/pessoa.module";
-import {CondicaoModule} from "./condicao/condicao.module";
-import {ItemModule} from "./item/item.module";
-import { ProcedimentoModule } from './procedimento/procedimento.module';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {PrivateRoutingModule} from './private-routing.module';
+import {DashboardModule} from './dashboard/dashboard.module';
+import {SharedModule} from '../../shared/shared.module';
+import {PessoaModule} from './pessoa/pessoa.module';
+import {CondicaoModule} from './condicao/condicao.module';
+import {ItemModule} from './item/item.module';
+import {ProcedimentoModule} from './procedimento/procedimento.module';
+import {ConsultaModule} from './consulta/consulta.module';
 
 
 @NgModule({
@@ -20,8 +20,9 @@ import { ProcedimentoModule } from './procedimento/procedimento.module';
     PessoaModule,
     CondicaoModule,
     ItemModule,
-    ProcedimentoModule
-
+    ProcedimentoModule,
+    ConsultaModule
   ]
 })
-export class PrivateModule {}
+export class PrivateModule {
+}
