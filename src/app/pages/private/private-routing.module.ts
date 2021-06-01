@@ -1,48 +1,46 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {DashboardPageComponent} from "./dashboard/containers";
-import {PrivateModule} from "./private.module";
-import {AuthGuard} from "../auth/guards";
 import {EditarCadastrarPessoaComponent} from "./pessoa/editar-cadastrar-pessoa/editar-cadastrar-pessoa.component";
 import {ConsultaPessoaComponent} from "./pessoa/consulta-pessoa/consulta-pessoa.component";
-import {PrivateInterceptor} from "./private-interceptor";
-import {TratamentoComponent} from "./tratamento/consulta-tratamento/consulta-tratamento.component";
-import {EditarCadastrarTratamentoComponent} from "./tratamento/editar-cadastrar-tratamento/editar-cadastrar-tratamento.component";
-import {ConsultaClinicaComponent} from "./clinica/consulta-clinica/consulta-clinica.component";
-import {EditarCadastrarClinicaComponent} from "./clinica/editar-cadastrar-clinica/editar-cadastrar-clinica.component";
+import { CondicaoComponent } from './condicao/consulta-condicao/consulta-condicao.component';
+import { EditarCadastrarCondicaoComponent } from './condicao/editar-cadastrar-condicao/editar-cadastrar-condicao.component';
+import { ConsultaItemComponent } from './item/consulta-item/consulta-item.component';
+import { EditarCadastrarItemComponent } from './item/editar-cadastrar-item/editar-cadastrar-item.component';
+
 
 const routes: Routes = [
   {
     path: 'dashboard',
     pathMatch: 'full',
-    canActivate: [AuthGuard],
+    canActivate: [],
     component: DashboardPageComponent
   }, {
     path: 'pessoas',
-    canActivate: [AuthGuard],
+    canActivate: [],
     component: ConsultaPessoaComponent
   }, {
     path: 'pessoa/:id',
-    canActivate: [AuthGuard],
+    canActivate: [],
     component: EditarCadastrarPessoaComponent
   },{
-    path: 'tratamentos',
-    canActivate: [AuthGuard],
-    component: TratamentoComponent
+    path: 'condicoes',
+    canActivate: [],
+    component: CondicaoComponent
   },{
-    path: 'tratamento/:id',
-    canActivate: [AuthGuard],
-    component: EditarCadastrarTratamentoComponent
+    path: 'condicao/:id',
+    canActivate: [],
+    component: EditarCadastrarCondicaoComponent
   },{
-    path: 'clinicas',
-    canActivate: [AuthGuard],
-    component: ConsultaClinicaComponent
+    path: 'itens',
+    canActivate: [],
+    component: ConsultaItemComponent
   },{
-    path: 'clinica/:id',
-    canActivate: [AuthGuard],
-    component: EditarCadastrarClinicaComponent
+    path: 'item/:id',
+    canActivate: [],
+    component: EditarCadastrarItemComponent
   }
+
 ];
 
 @NgModule({
@@ -52,6 +50,6 @@ const routes: Routes = [
   ],
   exports : [
     RouterModule
-  ],providers : [PrivateInterceptor]
+  ],providers : []
 })
 export class PrivateRoutingModule { }

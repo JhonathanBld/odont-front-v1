@@ -3,7 +3,7 @@
 @mixin toastr-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-itens: center;
   width: 100%;
 }
 
@@ -16,7 +16,7 @@
   width: 257px;
   color: $white;
   display: flex;
-  align-items: center;
+  align-itens: center;
   background-color: $color;
   height: 45px;
 }
@@ -26,13 +26,13 @@
   height: 45px;
   width: 45px;
   display: flex;
-  align-items: center;
+  align-itens: center;
   justify-content: center;
 }
 
 @mixin toastr-content {
   display: flex;
-  align-items: center;
+  align-itens: center;
 }
 
 @mixin toastr-content-title {

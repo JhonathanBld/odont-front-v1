@@ -11,12 +11,12 @@
 
   @media (max-width: $small) {
     flex-direction: column;
-    align-items: start;
+    align-itens: start;
   }
 
   &__link {
     display: flex;
-    align-items: center;
+    align-itens: center;
 
     @media (max-width: $small) {
       margin-bottom: 8px;

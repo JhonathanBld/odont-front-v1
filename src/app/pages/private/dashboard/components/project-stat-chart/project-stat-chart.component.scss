@@ -27,7 +27,7 @@
     padding: 8px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-itens: center;
   }
 
   &__title-text {
@@ -52,14 +52,14 @@
   &__total-info-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-itens: center;
     height: 70px;
   }
 
   &__total-info {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-itens: flex-end;
   }
 
   &__total-info-users {
@@ -99,7 +99,7 @@
 
   &__stat-value-wrapper {
     display: flex;
-    align-items: center;
+    align-itens: center;
   }
 
   &__stat-value {

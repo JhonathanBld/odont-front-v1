@@ -4,8 +4,9 @@ import {PrivateRoutingModule} from "./private-routing.module";
 import {DashboardModule} from "./dashboard/dashboard.module";
 import {SharedModule} from "../../shared/shared.module";
 import {PessoaModule} from "./pessoa/pessoa.module";
-import {TratamentoModule} from "./tratamento/tratamento.module";
-import {ClinicaModule} from "./clinica/clinica.module";
+import {CondicaoModule} from "./condicao/condicao.module";
+import {ItemModule} from "./item/item.module";
+import { ProcedimentoModule } from './procedimento/procedimento.module';
 
 
 
@@ -17,8 +18,10 @@ import {ClinicaModule} from "./clinica/clinica.module";
     DashboardModule,
     SharedModule,
     PessoaModule,
-    TratamentoModule,
-    ClinicaModule
+    CondicaoModule,
+    ItemModule,
+    ProcedimentoModule
+
   ]
 })
 export class PrivateModule {}

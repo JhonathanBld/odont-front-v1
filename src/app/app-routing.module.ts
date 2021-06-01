@@ -7,14 +7,10 @@ import {LoginFormComponent} from "./pages/auth/components";
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginFormComponent
-  },
-  {
     path: '',
     component: LayoutComponent,
     loadChildren: () => import('./pages/private/private.module').then(m => m.PrivateModule),
-    canActivate: [AuthGuard]
+    canActivate: []
   },{
     path: '**',
     component: NotFoundComponent,

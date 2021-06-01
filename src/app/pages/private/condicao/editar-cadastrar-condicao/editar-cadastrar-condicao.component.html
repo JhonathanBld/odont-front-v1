@@ -1,0 +1,31 @@
+<app-layout>
+
+  <section class="container">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <section fxLayout="row wrap" fxLayoutGap="16px grid" fxLayoutAlign="center center">
+        <div fxFlex="40">
+          <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="nome" [(ngModel)]="condicao.nome">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="40">
+          <mat-form-field appearance="outline">
+            <mat-label>Detalhes</mat-label>
+            <input matInput formControlName="detalhes" [(ngModel)]="condicao.detalhes">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="20">
+          <mat-checkbox formControlName="ativo" [(ngModel)]="condicao.ativo">Ativo</mat-checkbox>
+        </div>
+
+        <div fxFlex="100" fxLayoutAlign="end center">
+          <button mat-button color="primary" (click)="onSubmit()" [disabled]="form.invalid"> Salvar</button>
+        </div>
+      </section>
+    </form>
+  </section>
+</app-layout>
