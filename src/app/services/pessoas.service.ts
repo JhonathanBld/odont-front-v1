@@ -12,23 +12,23 @@ export class PessoasService {
   constructor(private http: HttpClient) { }
 
   get():Observable<any> {
-    return this.http.get(environment.url + '/pessoas');
+    return this.http.get(environment.url + '/Pessoa');
   }
 
   getById(id: Pessoa):Observable<any> {
-    return this.http.get(environment.url + '/pessoas/' + id);
+    return this.http.get(environment.url + '/Pessoa/' + id);
   }
 
   save(pessoa : Pessoa):Observable<any> {
-    return this.http.post(environment.url + '/pessoas' , pessoa);
+    return this.http.post(environment.url + '/Pessoa' , pessoa);
   }
 
   update(pessoa : Pessoa):Observable<any> {
-    return this.http.put(environment.url + `/pessoas/${pessoa.id}` , pessoa);
+    return this.http.put(environment.url + `/Pessoa/${pessoa.id}` , pessoa);
   }
 
   delete(id):Observable<any> {
-    return this.http.delete(environment.url + '/pessoas/' + id);
+    return this.http.delete(environment.url + '/Pessoa/' + id);
   }
 
 }

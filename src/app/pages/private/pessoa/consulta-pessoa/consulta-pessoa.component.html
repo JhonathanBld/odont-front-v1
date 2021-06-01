@@ -28,13 +28,7 @@
 
         <ngx-datatable-column name="Documento" prop="documento" [minWidth]="220">
           <ng-template let-row="row" ngx-datatable-cell-template>
-            {{ row['documento'] }}
-          </ng-template>
-        </ngx-datatable-column>
-
-        <ngx-datatable-column name="Data de nascimento" prop="nascimento" [minWidth]="220">
-          <ng-template let-row="row" ngx-datatable-cell-template>
-            {{ row['nascimento'] | date:'dd/MM/yyyy'}}
+            {{ row['cpf'] }}
           </ng-template>
         </ngx-datatable-column>
 

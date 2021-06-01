@@ -4,22 +4,22 @@ export class Pessoa {
 
   id: number;
   nome: string;
-  documento: string;
-  nascimento: string;
+  cpf: string;
   rg: string;
   email: string;
-  celular: string;
+  celular: number;
   ativo: boolean;
+  isPaciente: boolean;
+  isFuncionario: boolean;
 
   initForm() {
     return new FormBuilder().group({
       id: [''],
       nome: ['', Validators.required],
-      documento: ['', Validators.required],
-      nascimento: ['', Validators.required],
+      cpf: ['', Validators.required],
       rg: ['', Validators.required],
       email: ['', Validators.required],
-      celular: ['', Validators.required],
+      celular: [0, Validators.required],
       ativo: [false, Validators.required],
     });
   }

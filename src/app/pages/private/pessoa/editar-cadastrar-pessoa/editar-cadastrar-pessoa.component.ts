@@ -17,6 +17,7 @@ export class EditarCadastrarPessoaComponent implements OnInit {
   public pessoa = new Pessoa();
   public form: FormGroup;
   public novaPessoa = false;
+  public jaSalvo = false;
 
   constructor(private pessoaService: PessoasService, private snackBar: MatSnackBar, private router: Router, private activeRoute: ActivatedRoute) {
     this.form = this.pessoa.initForm();
@@ -27,6 +28,8 @@ export class EditarCadastrarPessoaComponent implements OnInit {
       this.novaPessoa = params.id === 'new';
       if (!this.novaPessoa) {
         this.getById(params.id);
+      } else {
+        this.jaSalvo = true;
       }
     });
   }
@@ -39,12 +42,13 @@ export class EditarCadastrarPessoaComponent implements OnInit {
 
   onSubmit() {
     if (this.novaPessoa) {
-      this.pessoa.nascimento = moment(this.pessoa.nascimento).format('YYYY/MM/DD');
-      this.pessoaService.save(this.pessoa).subscribe(res => {
+
+        this.pessoaService.save(this.pessoa).subscribe(res => {
         this.snackBar.open('Pessoa cadastrada com sucesso!', 'X', {
           duration: 3000
         });
-        this.router.navigate(['/pessoas']);
+        this.jaSalvo = true;
+        // this.router.navigate(['/pessoas']);
       }, error => {
         this.snackBar.open('Erro durante o processamento!', 'X', {
           duration: 3000
