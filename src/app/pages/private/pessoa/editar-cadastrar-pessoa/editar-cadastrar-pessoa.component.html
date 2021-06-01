@@ -11,11 +11,31 @@
           </mat-form-field>
         </div>
 
+        <div fxFlex="33">
+          <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="email" [(ngModel)]="pessoa.email">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="33">
+          <mat-form-field appearance="outline">
+            <mat-label>Celular</mat-label>
+            <input  matInput formControlName="celular" [(ngModel)]="pessoa.celular" [textMask]="{mask: masks.maskPhone}">
+          </mat-form-field>
+        </div>
 
         <div fxFlex="33">
           <mat-form-field appearance="outline">
             <mat-label>Documento</mat-label>
             <input matInput [textMask]="{mask: masks.cpf}" formControlName="documento" [(ngModel)]="pessoa.documento">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="33">
+          <mat-form-field appearance="outline">
+            <mat-label>RG</mat-label>
+            <input matInput formControlName="rg" [(ngModel)]="pessoa.rg">
           </mat-form-field>
         </div>
 

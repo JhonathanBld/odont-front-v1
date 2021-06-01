@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {PessoasService} from "../../../../services/pessoas.service";
 import Swal from "sweetalert2";
-import {MatSnackBar} from "@angular/material/snack-bar";
-import {Condicao} from "../../../../models/condicoes.model";
-import { CondicaoService } from '../../../../services/condicoes.service';
+import {MatSnackBar} from "@angular/material/snack-bar"
+import { ProcedimentoService } from '../../../../services/procedimento.service';
+import { Procedimento } from '../../../../models/procedimento.model';
 
 @Component({
   selector: 'app-consulta-procedimento',
@@ -11,8 +10,8 @@ import { CondicaoService } from '../../../../services/condicoes.service';
   styleUrls: ['./consulta-procedimento.component.css']
 })
 export class ProcedimentoComponent implements OnInit {
-  data : Array<Condicao>;
-  constructor(private procedimentoService: CondicaoService, private snackBar: MatSnackBar) { }
+  data : Array<Procedimento>;
+  constructor(private procedimentoService: ProcedimentoService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.get();

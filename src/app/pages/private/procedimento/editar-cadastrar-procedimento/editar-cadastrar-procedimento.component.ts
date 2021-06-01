@@ -44,7 +44,7 @@ export class EditarCadastrarProcedimentoComponent implements OnInit {
         this.snackBar.open('Procedimento cadastrado com sucesso!', 'X', {
           duration: 3000
         });
-        this.router.navigate(['/condicoes']);
+        this.router.navigate(['/procedimentos']);
       }, error => {
         this.snackBar.open('Erro durante o processamento!', 'X', {
           duration: 3000
@@ -55,7 +55,7 @@ export class EditarCadastrarProcedimentoComponent implements OnInit {
         this.snackBar.open('Procedimento alterado com sucesso!', 'X', {
           duration: 3000
         });
-        this.router.navigate(['/condicoes']);
+        this.router.navigate(['/procedimentos']);
       }, error => {
         this.snackBar.open('Erro durante o processamento!', 'X', {
           duration: 3000

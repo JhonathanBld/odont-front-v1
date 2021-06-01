@@ -7,6 +7,8 @@ import { CondicaoComponent } from './condicao/consulta-condicao/consulta-condica
 import { EditarCadastrarCondicaoComponent } from './condicao/editar-cadastrar-condicao/editar-cadastrar-condicao.component';
 import { ConsultaItemComponent } from './item/consulta-item/consulta-item.component';
 import { EditarCadastrarItemComponent } from './item/editar-cadastrar-item/editar-cadastrar-item.component';
+import { ProcedimentoComponent } from './procedimento/consulta-procedimento/consulta-procedimento.component';
+import { EditarCadastrarProcedimentoComponent } from './procedimento/editar-cadastrar-procedimento/editar-cadastrar-procedimento.component';
 
 
 const routes: Routes = [
@@ -39,6 +41,15 @@ const routes: Routes = [
     path: 'item/:id',
     canActivate: [],
     component: EditarCadastrarItemComponent
+  },
+  {
+    path: 'procedimentos',
+    canActivate: [],
+    component: ProcedimentoComponent
+  },{
+    path: 'procedimento/:id',
+    canActivate: [],
+    component: EditarCadastrarProcedimentoComponent
   }
 
 ];
